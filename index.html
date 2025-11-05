@@ -6,189 +6,204 @@
 <title>Hamed Al-Zain | COO</title>
 <style>
 :root {
-  --dark:#1f3b52;
-  --gold:#c4a062;
-  --glass:rgba(255,255,255,0.3);
-  --line:rgba(0,0,0,0.06);
+  --dark: #1f3b52;
+  --gold: #c4a062;
+  --glass: rgba(255, 255, 255, 0.3);
+  --line: rgba(0, 0, 0, 0.06);
 }
 
-/* ===== الخلفية ===== */
+/* ===== الخلفية العامة ===== */
 body {
-  margin:0;
-  font-family:"Poppins","Tajawal",sans-serif;
-  background:linear-gradient(180deg,#ffffff 0%,#f3f4f6 100%);
-  overflow-x:hidden;
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  margin: 0;
+  font-family: "Poppins", "Tajawal", sans-serif;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f4f6 100%);
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ===== النقوش ===== */
 body::before {
-  content:"";
-  position:fixed;
-  inset:0;
+  content: "";
+  position: fixed;
+  inset: 0;
   background:
-    linear-gradient(60deg,var(--line) 1px,transparent 1px),
-    linear-gradient(-60deg,var(--line) 1px,transparent 1px),
-    radial-gradient(circle at 20% 30%,rgba(196,160,98,0.06),transparent 60%),
-    radial-gradient(circle at 80% 70%,rgba(31,59,82,0.06),transparent 70%);
-  background-size:70px 70px;
-  opacity:0.8;
-  pointer-events:none;
-}
-
-/* ===== طبقة الزجاج ===== */
-body::after {
-  content:"";
-  position:fixed;
-  inset:0;
-  background:linear-gradient(135deg,var(--glass) 0%,rgba(255,255,255,0) 70%);
-  pointer-events:none;
+    linear-gradient(60deg, var(--line) 1px, transparent 1px),
+    linear-gradient(-60deg, var(--line) 1px, transparent 1px),
+    radial-gradient(circle at 20% 30%, rgba(196,160,98,0.06), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(31,59,82,0.06), transparent 70%);
+  background-size: 70px 70px;
+  opacity: 0.8;
+  pointer-events: none;
 }
 
 /* ===== البطاقة ===== */
 .hero {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin-top:100px; /* تم إنزال البطاقة قليلاً */
-  position:relative;
-  z-index:2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  position: relative;
+  z-index: 2;
 }
 
 .card-frame {
-  width:8.5cm;
-  height:5.5cm;
-  border-radius:20px;
-  background:rgba(255,255,255,0.35);
-  backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,0.3);
-  box-shadow:0 20px 40px rgba(0,0,0,0.08);
-  position:relative;
-  overflow:hidden;
+  width: 9.5cm;   /* كبرنا البطاقة */
+  height: 6.2cm;  /* زودنا الارتفاع */
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: visible;
 }
 
 .card-frame img {
-  width:100%;
-  height:100%;
-  border-radius:20px;
-  object-fit:cover;
-  opacity:1;
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  object-fit: cover;
+  opacity: 0.95;
 }
 
 /* ===== الأفاتار ===== */
 .avatar {
-  width:115px;
-  height:115px;
-  border-radius:50%;
-  background:#f0f0f0 url('https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png') center/60% no-repeat;
-  border:5px solid #fff;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-  position:absolute;
-  bottom:-55px; /* نزلناه أكثر شوي للتوازن */
-  left:50%;
-  transform:translateX(-50%);
-  z-index:5;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #f0f0f0 url('https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png') center/60% no-repeat;
+  border: 5px solid #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  bottom: -50px; /* مناسب الآن بعد تكبير البطاقة */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
 }
 
 /* ===== النصوص ===== */
 .container {
-  text-align:center;
-  margin-top:160px; /* زادت المسافة عشان الافتار نزل */
-  padding:0 25px 60px;
-  color:var(--dark);
+  text-align: center;
+  margin-top: 100px; /* قللنا المسافة بين الافتار والاسم */
+  padding: 0 20px 60px;
+  color: var(--dark);
 }
 
 h1 {
-  font-size:2rem;
-  font-weight:700;
-  color:var(--dark);
-  margin:85px 0 10px;
-  letter-spacing:0.5px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 40px 0 6px; /* قللنا المسافة */
 }
 
 h2 {
-  font-size:1.05rem;
-  font-weight:400;
-  color:#555;
-  margin-bottom:15px;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 10px;
 }
 
 .phone {
-  font-size:1rem;
-  color:#2c2c2c; /* تم تغييره من الأزرق إلى رمادي أنيق */
-  font-weight:300;
-  margin-bottom:30px;
+  font-size: 1rem;
+  color: #2c2c2c;
+  margin-bottom: 25px;
+  font-weight: 300;
 }
 
 /* ===== الأيقونات ===== */
 .icons {
-  display:flex;
-  justify-content:center;
-  gap:25px;
-  margin-bottom:35px;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 35px;
 }
 
 .icon {
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  background:rgba(255,255,255,0.75);
-  color:var(--dark);
-  border:1px solid rgba(31,59,82,0.1);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:20px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.07);
-  transition:0.3s;
-  backdrop-filter:blur(8px);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--dark);
+  border: 1px solid rgba(31, 59, 82, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  backdrop-filter: blur(5px);
 }
 .icon:hover {
-  background:var(--gold);
-  color:#fff;
-  transform:translateY(-4px);
+  background: var(--gold);
+  color: #fff;
+  transform: translateY(-3px);
 }
 
 /* ===== الزر ===== */
 .btn {
-  background:linear-gradient(135deg,var(--dark) 0%,#314e6a 100%);
-  border:none;
-  color:#fff;
-  font-size:1.05rem;
-  font-weight:500;
-  padding:14px 38px;
-  border-radius:35px;
-  cursor:pointer;
-  transition:0.3s;
-  box-shadow:0 5px 18px rgba(31,59,82,0.25);
-  text-decoration:none;
-  display:inline-block;
-  letter-spacing:0.3px;
+  background: linear-gradient(135deg, var(--dark) 0%, #314e6a 100%);
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 12px 34px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(31,59,82,0.2);
+  text-decoration: none;
+  display: inline-block;
 }
 .btn:hover {
-  background:linear-gradient(135deg,var(--gold) 0%,#b28e52 100%);
-  transform:translateY(-2px);
+  background: linear-gradient(135deg, var(--gold) 0%, #b28e52 100%);
 }
 
 /* ===== الموقع ===== */
 .location {
-  margin-top:20px;
-  color:#3c3c3c;
-  font-size:1rem;
-  font-weight:500;
-  letter-spacing:0.5px;
-  font-family:"Poppins", sans-serif;
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 25px;
+  font-family: "Poppins", sans-serif;
 }
 
 /* ===== متجاوب ===== */
-@media (max-width:600px){
-  .card-frame{width:90%;height:auto;aspect-ratio:8.5/5.5;}
-  .avatar{width:95px;height:95px;bottom:-45px;}
-  h1{font-size:1.6rem;margin-top:90px;}
-  .icons{gap:18px;margin-bottom:30px;}
+@media (max-width: 600px) {
+  .hero {
+    margin-top: 60px;
+  }
+  .card-frame {
+    width: 92%;
+    height: auto;
+    aspect-ratio: 8.5 / 5.3;
+  }
+  .avatar {
+    width: 95px;
+    height: 95px;
+    bottom: -42px;
+  }
+  .container {
+    margin-top: 85px; /* قللنا أكثر للجوال */
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 35px;
+  }
+  .icons {
+    gap: 16px;
+  }
+  .icon {
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+  }
+  .btn {
+    font-size: 0.9rem;
+    padding: 10px 28px;
+  }
 }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -197,7 +212,7 @@ h2 {
 
 <div class="hero">
   <div class="card-frame">
-    <img src="./card444444444.svg" alt="Business Card">
+    <img src="https://hamedalzain.github.io/fff/card444444444.svg" alt="Business Card">
     <div class="avatar"></div>
   </div>
 </div>
@@ -210,7 +225,7 @@ h2 {
   <div class="icons">
     <a href="https://wa.me/966510128214" class="icon" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
     <a href="mailto:coo@muzntwiq.com" class="icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
-    <a href="https://therealmerona-hash.github.io/fff/Hamed-Al-Zain.vcf" class="icon" title="Save Contact"><i class="fa-solid fa-download"></i></a>
+    <a href="https://hamedalzain.github.io/fff/Hamed-Al-Zain.vcf" class="icon" title="Save Contact"><i class="fa-solid fa-download"></i></a>
     <button class="icon" onclick="shareProfile()" title="Share"><i class="fa-solid fa-paper-plane"></i></button>
   </div>
 
