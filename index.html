@@ -170,42 +170,52 @@ h2 {
   font-family: "Poppins", sans-serif;
 }
 
-/* ===== متجاوب ===== */
+/* ===== متجاوب للجوال ===== */
 @media (max-width: 600px) {
   .hero {
     margin-top: 60px;
   }
+
+  /* تكبير البطاقة في الجوال */
   .card-frame {
-    width: 92%;
+    width: 95% !important;
     height: auto;
-    aspect-ratio: 8.5 / 5.3;
+    aspect-ratio: 8.5 / 5.1;
   }
+
+  /* تكبير الافتار ليتناسب مع البطاقة */
   .avatar {
-    width: 95px;
-    height: 95px;
-    bottom: -42px;
+    width: 110px !important;
+    height: 110px !important;
+    bottom: -48px !important;
   }
+
+  /* تقليل المسافة بين الافتار والاسم */
   .container {
-    margin-top: 40px;
+    margin-top: 70px !important;
   }
+
   h1 {
-    font-size: 1.5rem;
-    margin-top: 35px;
+    font-size: 1.55rem !important;
+    margin-top: 25px !important;
   }
+
   .icons {
-    gap: 16px;
+    gap: 18px !important;
   }
+
   .icon {
-    width: 46px;
-    height: 46px;
-    font-size: 18px;
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 18px !important;
   }
+
   .btn {
-    font-size: 0.9rem;
-    padding: 10px 28px;
+    font-size: 0.95rem !important;
+    padding: 10px 30px !important;
   }
-  
 }
+
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
